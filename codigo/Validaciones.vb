@@ -2,26 +2,26 @@ Public Class Validaciones
 
     Public Shared Function validacion_vacio(ByVal texto As String) As Boolean
         '-------------------------------------------------------------------------------
-        ' Funci�n: validacion_vacio
+        ' Función: validacion_vacio
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si un texto dado est� vac�o o no. Si el texto est� vac�o,
+        ' Descripción:
+        '   Esta función verifica si un texto dado está vacío o no. Si el texto está vacío,
         '   muestra un mensaje de advertencia y devuelve True; de lo contrario, devuelve False.
         '
-        ' Par�metros:
-        '   texto (String): El texto que se va a verificar si est� vac�o o no.
+        ' Parámetros:
+        '   texto (String): El texto que se va a verificar si está vacío o no.
         '
         ' Devuelve:
-        '   Boolean: True si el texto est� vac�o, False si no lo est�.
+        '   Boolean: True si el texto está vacío, False si no lo está.
         '-------------------------------------------------------------------------------
 
-        ' Verifica si el texto est� vac�o
+        ' Verifica si el texto está vacío
         If texto = "" Then
-            ' Si el texto est� vac�o, muestra un mensaje de advertencia
-            MsgBox("No puede haber campos vac�os", MsgBoxStyle.OkOnly)
+            ' Si el texto está vacío, muestra un mensaje de advertencia
+            MsgBox("No puede haber campos vacíos", MsgBoxStyle.OkOnly)
             Return True
         Else
-            ' Si el texto no est� vac�o, devuelve False
+            ' Si el texto no está vacío, devuelve False
             Return False
         End If
     End Function
@@ -31,14 +31,14 @@ Public Class Validaciones
     Public Shared Function validarLongitud(ByVal texto As String, ByVal longitud As Integer) As Boolean
 
         '-------------------------------------------------------------------------------
-        ' Funci�n: validarLongitud
+        ' Función: validarLongitud
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si un texto dado tiene una longitud especificada. Si la longitud
+        ' Descripción:
+        '   Esta función verifica si un texto dado tiene una longitud especificada. Si la longitud
         '   del texto no coincide con la longitud especificada, muestra un mensaje de advertencia y
         '   devuelve True; de lo contrario, devuelve False.
         '
-        ' Par�metros:
+        ' Parámetros:
         '   texto (String): El texto cuya longitud se va a verificar.
         '   longitud (Integer): La longitud requerida del texto que se va a verificar.
         '
@@ -60,28 +60,28 @@ Public Class Validaciones
     End Function
 
     '-------------------------------------------------------------------------------
-    ' Funci�n: soloNumeros
+    ' Función: soloNumeros
     '-------------------------------------------------------------------------------
-    ' Descripci�n:
-    '   Esta funci�n verifica si un texto dado contiene solo caracteres num�ricos. 
-    '   Si encuentra alg�n car�cter que no sea un n�mero, muestra un mensaje de advertencia
+    ' Descripción:
+    '   Esta función verifica si un texto dado contiene solo caracteres numéricos. 
+    '   Si encuentra algún carácter que no sea un número, muestra un mensaje de advertencia
     '   y devuelve True; de lo contrario, devuelve False.
     '
-    ' Par�metros:
-    '   texto (String): El texto que se va a verificar para asegurar que contenga solo n�meros.
+    ' Parámetros:
+    '   texto (String): El texto que se va a verificar para asegurar que contenga solo números.
     '
     ' Devuelve:
-    '   Boolean: True si el texto contiene caracteres que no son n�meros, False si todos los caracteres son n�meros.
+    '   Boolean: True si el texto contiene caracteres que no son números, False si todos los caracteres son números.
     '-------------------------------------------------------------------------------
 
     Public Shared Function soloNumeros(ByVal texto As String) As Boolean
-        ' Validar que solo sean n�meros
+        ' Validar que solo sean números
         For i As Integer = 1 To Len(texto)
             If Not Char.IsDigit(texto(i - 1)) Then
-                ' Si encuentra un car�cter que no es un n�mero, muestra un mensaje de advertencia y devuelve True
-                MsgBox("El campo solo debe contener n�meros", MsgBoxStyle.OkOnly)
+                ' Si encuentra un carácter que no es un número, muestra un mensaje de advertencia y devuelve True
+                MsgBox("El campo solo debe contener números", MsgBoxStyle.OkOnly)
                 Return True
-                Exit For ' Salir del bucle luego de encontrar el primer car�cter no num�rico
+                Exit For ' Salir del bucle luego de encontrar el primer carácter no numérico
             End If
         Next
         Return False
@@ -89,14 +89,14 @@ Public Class Validaciones
 
     Public Shared Function caracteresEspeciales(ByVal texto As String) As Boolean
         '-------------------------------------------------------------------------------
-        ' Funci�n: caracteresEspeciales
+        ' Función: caracteresEspeciales
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si un texto contiene caracteres especiales. Si encuentra
-        '   alg�n car�cter especial, muestra un mensaje de advertencia y devuelve True; de lo
+        ' Descripción:
+        '   Esta función verifica si un texto contiene caracteres especiales. Si encuentra
+        '   algún carácter especial, muestra un mensaje de advertencia y devuelve True; de lo
         '   contrario, devuelve False.
         '
-        ' Par�metros:
+        ' Parámetros:
         '   texto (String): El texto que se va a verificar en busca de caracteres especiales.
         '
         ' Devuelve:
@@ -133,7 +133,7 @@ Public Class Validaciones
         '   125 }
         '   126 ~
 
-        'Nota: El 45 (-), 46(.) y el 95(_) fueron removidos para tener compatibilidad con la validaci�n de correo electronico
+        'Nota: El 45 (-), 46(.) y el 95(_) fueron removidos para tener compatibilidad con la validación de correo electrónico
         '-------------------------------------------------------------------------------
 
         For i As Integer = 1 To Len(texto)
@@ -151,27 +151,27 @@ Public Class Validaciones
 
     Public Shared Function validarDinero(ByVal monto As String) As Boolean
         '-------------------------------------------------------------------------------
-        ' Funci�n: validarDinero
+        ' Función: validarDinero
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si una cadena dada representa un monto de dinero v�lido.
-        '   Verifica si la cadena contiene solo n�meros y opcionalmente un punto decimal,
-        '   lo que indica la separaci�n entre la parte entera y la parte decimal del monto.
+        ' Descripción:
+        '   Esta función verifica si una cadena dada representa un monto de dinero válido.
+        '   Verifica si la cadena contiene solo números y opcionalmente un punto decimal,
+        '   lo que indica la separación entre la parte entera y la parte decimal del monto.
         '
-        ' Par�metros:
+        ' Parámetros:
         '   monto (String): La cadena que representa el monto de dinero que se va a validar.
         '
         ' Devuelve:
-        '   Boolean: True si la cadena no cumple con los criterios de validaci�n, False si
-        '            cumple con los criterios y es considerada un monto de dinero v�lido.
+        '   Boolean: True si la cadena no cumple con los criterios de validación, False si
+        '            cumple con los criterios y es considerada un monto de dinero válido.
         '
         ' Dependencias:
-        '   Esta funci�n hace uso de la funci�n soloNumeros previamente definida para verificar
-        '   si una cadena contiene solo caracteres num�ricos.
+        '   Esta función hace uso de la función soloNumeros previamente definida para verificar
+        '   si una cadena contiene solo caracteres numéricos.
         '-------------------------------------------------------------------------------
         Dim punto_posicion As Byte
 
-        ' Buscar la posici�n del punto decimal en la cadena
+        ' Buscar la posición del punto decimal en la cadena
         For i As Integer = 1 To Len(monto)
             If monto(i - 1) = "." Then
                 punto_posicion = i
@@ -179,17 +179,17 @@ Public Class Validaciones
             End If
         Next
 
-        ' Validar que solo sean n�meros antes del punto decimal
+        ' Validar que solo sean números antes del punto decimal
         If soloNumeros(Mid(monto, 1, punto_posicion - 1)) Then
             Return True
         End If
 
-        ' Validar que solo sean n�meros despu�s del punto decimal (si existe)
+        ' Validar que solo sean números después del punto decimal (si existe)
         If punto_posicion > 0 AndAlso soloNumeros(Mid(monto, punto_posicion + 1)) Then
             Return True
         End If
 
-        ' Si todas las validaciones pasan, entonces el monto de dinero es v�lido
+        ' Si todas las validaciones pasan, entonces el monto de dinero es válido
         Return False
     End Function
 
@@ -197,18 +197,18 @@ Public Class Validaciones
 
     Public Shared Function mayorquecero(ByVal numero As Integer) As Boolean
         '-------------------------------------------------------------------------------
-        ' Funci�n: mayorquecero
+        ' Función: mayorquecero
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si un n�mero entero es mayor que cero. Si el n�mero es
+        ' Descripción:
+        '   Esta función verifica si un número entero es mayor que cero. Si el número es
         '   menor que cero, muestra un mensaje de advertencia y devuelve True; de lo contrario,
         '   devuelve False.
         '
-        ' Par�metros:
-        '   numero (Integer): El n�mero entero que se va a verificar si es mayor que cero.
+        ' Parámetros:
+        '   numero (Integer): El número entero que se va a verificar si es mayor que cero.
         '
         ' Devuelve:
-        '   Boolean: True si el n�mero es menor que cero, False si es mayor o igual a cero.
+        '   Boolean: True si el número es menor que cero, False si es mayor o igual a cero.
         '-------------------------------------------------------------------------------
 
         If numero < 0 Then
@@ -222,19 +222,19 @@ Public Class Validaciones
     Public Shared Function longitudMaxima(ByVal texto As String, maximo As Integer) As Boolean
 
         '-------------------------------------------------------------------------------
-        ' Funci�n: longitudMaxima
+        ' Función: longitudMaxima
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si la longitud de un texto dado excede un l�mite m�ximo
-        '   especificado. Si la longitud del texto es mayor que el l�mite m�ximo, muestra
+        ' Descripción:
+        '   Esta función verifica si la longitud de un texto dado excede un límite máximo
+        '   especificado. Si la longitud del texto es mayor que el límite máximo, muestra
         '   un mensaje de advertencia y devuelve True; de lo contrario, devuelve False.
         '
-        ' Par�metros:
+        ' Parámetros:
         '   texto (String): El texto cuya longitud se va a verificar.
-        '   maximo (Integer): La longitud m�xima permitida para el texto.
+        '   maximo (Integer): La longitud máxima permitida para el texto.
         '
         ' Devuelve:
-        '   Boolean: True si la longitud del texto excede el l�mite m�ximo, False si no lo hace.
+        '   Boolean: True si la longitud del texto excede el límite máximo, False si no lo hace.
         '-------------------------------------------------------------------------------
 
         If Len(texto) > maximo Then
@@ -250,19 +250,19 @@ Public Class Validaciones
     Public Shared Function longitudMinima(ByVal texto As String, minimo As Integer) As Boolean
 
         '-------------------------------------------------------------------------------
-        ' Funci�n: longitudMinima
+        ' Función: longitudMinima
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si la longitud de un texto dado es menor que un l�mite
-        '   m�nimo especificado. Si la longitud del texto es menor que el l�mite m�nimo,
+        ' Descripción:
+        '   Esta función verifica si la longitud de un texto dado es menor que un límite
+        '   mínimo especificado. Si la longitud del texto es menor que el límite mínimo,
         '   muestra un mensaje de advertencia y devuelve True; de lo contrario, devuelve False.
         '
-        ' Par�metros:
+        ' Parámetros:
         '   texto (String): El texto cuya longitud se va a verificar.
-        '   minimo (Integer): La longitud m�nima requerida para el texto.
+        '   minimo (Integer): La longitud mínima requerida para el texto.
         '
         ' Devuelve:
-        '   Boolean: True si la longitud del texto es menor que el l�mite m�nimo, False si no lo es.
+        '   Boolean: True si la longitud del texto es menor que el límite mínimo, False si no lo es.
         '-------------------------------------------------------------------------------
 
 
@@ -278,28 +278,28 @@ Public Class Validaciones
 
     Public Shared Function numerotelefonico(ByVal numero As String) As Boolean
         '-------------------------------------------------------------------------------
-        ' Funci�n: numerotelefonico
+        ' Función: numerotelefonico
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si un n�mero telef�nico dado cumple con los criterios
-        '   de validaci�n establecidos. Primero, verifica si el n�mero contiene solo
-        '   caracteres num�ricos. Luego, verifica si el n�mero tiene una longitud de
-        '   10 d�gitos, que es la longitud est�ndar para n�meros telef�nicos en M�xico.
+        ' Descripción:
+        '   Esta función verifica si un número telefónico dado cumple con los criterios
+        '   de validación establecidos. Primero, verifica si el número contiene solo
+        '   caracteres numéricos. Luego, verifica si el número tiene una longitud de
+        '   10 dígitos, que es la longitud estándar para números telefónicos en México.
         '
-        ' Par�metros:
-        '   numero (String): El n�mero telef�nico que se va a validar.
+        ' Parámetros:
+        '   numero (String): El número telefónico que se va a validar.
         '
         ' Devuelve:
-        '   Boolean: True si el n�mero telef�nico cumple con los criterios de validaci�n,
+        '   Boolean: True si el número telefónico cumple con los criterios de validación,
         '            False si no los cumple.
         '
         ' Dependencias:
-        '   Esta funci�n utiliza las siguientes funciones de validaci�n definidas previamente:
-        '   - soloNumeros: Verifica si una cadena contiene solo caracteres num�ricos.
-        '   - validarLongitud: Verifica si una cadena tiene una longitud espec�fica.
+        '   Esta función utiliza las siguientes funciones de validación definidas previamente:
+        '   - soloNumeros: Verifica si una cadena contiene solo caracteres numéricos.
+        '   - validarLongitud: Verifica si una cadena tiene una longitud específica.
         '-------------------------------------------------------------------------------
 
-        'Primero validar que sean puros numeros
+        'Primero validar que sean puros números
 
         If soloNumeros(numero) = True Then
             Return True
@@ -319,30 +319,30 @@ Public Class Validaciones
     Public Shared Function correoelectronico(ByVal email As String) As Boolean
 
         '-------------------------------------------------------------------------------
-        ' Funci�n: correoelectronico
+        ' Función: correoelectronico
         '-------------------------------------------------------------------------------
-        ' Descripci�n:
-        '   Esta funci�n verifica si una cadena dada cumple con los criterios para ser
-        '   considerada como una direcci�n de correo electr�nico v�lida. Verifica si la
-        '   cadena tiene un formato adecuado, incluyendo la presencia de una �nica arroba,
-        '   longitud del nombre de usuario y del dominio dentro de los l�mites permitidos,
+        ' Descripción:
+        '   Esta función verifica si una cadena dada cumple con los criterios para ser
+        '   considerada como una dirección de correo electrónico válida. Verifica si la
+        '   cadena tiene un formato adecuado, incluyendo la presencia de una única arroba,
+        '   longitud del nombre de usuario y del dominio dentro de los límites permitidos,
         '   ausencia de caracteres especiales en el nombre de usuario, y si el dominio
-        '   tiene una extensi�n de dominio (TLD) v�lida (.com, .gob, .org, .net).
+        '   tiene una extensión de dominio (TLD) válida (.com, .gob, .org, .net).
         '
-        ' Par�metros:
-        '   email (String): La cadena que representa la direcci�n de correo electr�nico
+        ' Parámetros:
+        '   email (String): La cadena que representa la dirección de correo electrónico
         '                   que se va a validar.
         '
         ' Devuelve:
-        '   Boolean: True si la cadena no cumple con los criterios de validaci�n, False si
-        '            cumple con los criterios y es considerada una direcci�n de correo
-        '            electr�nico v�lida.
+        '   Boolean: True si la cadena no cumple con los criterios de validación, False si
+        '            cumple con los criterios y es considerada una dirección de correo
+        '            electrónico válida.
         '
         ' Dependencias:
-        '   Esta funci�n hace uso de las siguientes funciones de validaci�n previamente
+        '   Esta función hace uso de las siguientes funciones de validación previamente
         '   definidas:
-        '   - longitudMaxima: Verifica si una cadena excede una longitud m�xima especificada.
-        '   - longitudMinima: Verifica si una cadena tiene una longitud m�nima especificada.
+        '   - longitudMaxima: Verifica si una cadena excede una longitud máxima especificada.
+        '   - longitudMinima: Verifica si una cadena tiene una longitud mínima especificada.
         '   - caracteresEspeciales: Verifica si una cadena contiene caracteres especiales.
         '-------------------------------------------------------------------------------
 
@@ -351,7 +351,7 @@ Public Class Validaciones
         Dim contador_arroba As Integer
         contador_arroba = 0
 
-        ' Contar la cantidad de arrobas en el correo electr�nico
+        ' Contar la cantidad de arrobas en el correo electrónico
         For i As Integer = 1 To Len(email)
             If email(i - 1) = "@" Then
                 arroba_posc = i
@@ -401,9 +401,9 @@ Public Class Validaciones
             Return True
         End If
 
-        ' Validar que el dominio tenga una extensi�n de dominio (TLD) v�lida
+        ' Validar que el dominio tenga una extensión de dominio (TLD) válida
         If Not (dominio.EndsWith(".com") Or dominio.EndsWith(".gob") Or dominio.EndsWith(".org") Or dominio.EndsWith(".net")) Then
-            MsgBox("El dominio del correo electr�nico no es v�lido.", MsgBoxStyle.OkOnly)
+            MsgBox("El dominio del correo electrónico no es válido.", MsgBoxStyle.OkOnly)
             Return True
         End If
 
